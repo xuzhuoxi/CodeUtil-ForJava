@@ -60,13 +60,13 @@
 		</javac>
 	</target>
 	<!-- 打包成可执行文件jar -->
-	<target name="jar" description="打包成可执行文件jar">
+	<target name="jar" description="打包中间码">
 		<property name="jarName" value="codeutil" />
 		<jar destfile="${release.dist.dir}/${jarName}.jar" update="false">
 			<fileset dir="${bin.main}" />
 		</jar>
 	</target>
-	<target name="jar-src" description="打包成可执行文件jar">
+	<target name="jar-src" description="打包源码">
 		<property name="jarName" value="codeutil-src" />
 		<jar destfile="${release.dist.dir}/${jarName}.jar" update="false">
 			<fileset dir="${src.main.dir}" />

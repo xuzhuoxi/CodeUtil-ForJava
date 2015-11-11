@@ -10,11 +10,15 @@ import java.util.List;
  *
  */
 public class ArrayUtils {
+	private ArrayUtils() {
+	}
+
 	/**
 	 * 不支持二维以上数组
 	 * 
 	 * @param ary
-	 * @return
+	 *            输入数组
+	 * @return 新的数组
 	 */
 	public static final <T> T[] cleanRepeat2List(T[] ary) {
 		List<T> list = new ArrayList<T>();
@@ -34,8 +38,12 @@ public class ArrayUtils {
 	 * 不支持二维以上数组
 	 * 
 	 * @param arr0
+	 *            对象数组
 	 * @param arr1
-	 * @return
+	 *            对象数组
+	 * @return 如果两个数组长度相等且每个数组对象依次相等，则返回true<br>
+	 *         否则返回false<br>
+	 *         相等指的是equals方法调用为true<br>
 	 */
 	public static final <T> boolean equals(T[] arr0, T[] arr1) {
 		if (arr0 == arr1) {
@@ -60,7 +68,7 @@ public class ArrayUtils {
 	 *            源数据
 	 * @param index
 	 *            移除标志位
-	 * @return
+	 * @return 新的数组
 	 */
 	public static final <T> T[] remove(T[] data, int index) {
 		T[] temp = Arrays.copyOf(data, data.length - 1);
@@ -73,8 +81,11 @@ public class ArrayUtils {
 	 * 使用实例的equals方法进行判断是否相等<br>
 	 * 
 	 * @param array
+	 *            数组
 	 * @param obj
-	 * @return
+	 *            对象
+	 * @return 如果数组只有一个对象与obj相等，则返回true<br>
+	 * @see Object#equals(Object)
 	 */
 	public static final <T> boolean isExist(T[] array, T obj) {
 		T[] temp = array.clone();
@@ -85,18 +96,20 @@ public class ArrayUtils {
 	/**
 	 * 合并两个数组
 	 * 
-	 * @param base
-	 * @param add
-	 * @return
+	 * @param arr0
+	 *            数组1
+	 * @param arr1
+	 *            数组2
+	 * @return 新的数组
 	 */
-	public static final <T> T[] addAll(T[] base, T[] add) {
-		if (null == base || null == add) {
+	public static final <T> T[] mergeArray(T[] arr0, T[] arr1) {
+		if (null == arr0 || null == arr1) {
 			return null;
 		}
-		final int baseLen = null == base ? 0 : base.length;
-		final int addLen = null == add ? 0 : add.length;
-		T[] rs = Arrays.copyOf(base, baseLen + addLen);
-		System.arraycopy(add, 0, rs, baseLen, addLen);
+		final int baseLen = null == arr0 ? 0 : arr0.length;
+		final int addLen = null == arr1 ? 0 : arr1.length;
+		T[] rs = Arrays.copyOf(arr0, baseLen + addLen);
+		System.arraycopy(arr1, 0, rs, baseLen, addLen);
 		return rs;
 	}
 
@@ -104,8 +117,10 @@ public class ArrayUtils {
 	 * 分割一个字符串数组，获得一个新的字符串数组从startIndex位到末尾
 	 * 
 	 * @param arr
+	 *            源数组
 	 * @param startIndex
-	 * @return
+	 *            开始索引
+	 * @return 新的数组
 	 */
 	public static final <T> T[] subArray(T[] arr, int startIndex) {
 		if (startIndex <= arr.length) {
@@ -123,9 +138,12 @@ public class ArrayUtils {
 	 * 分割一个字符串数组，获得一个新的字符串数组从startIndex位到endIndex(不包括)位
 	 * 
 	 * @param arr
+	 *            源数组
 	 * @param startIndex
+	 *            开始索引
 	 * @param endIndex
-	 * @return
+	 *            结束索引(不包括)
+	 * @return 新的数组
 	 */
 	public static final <T> T[] subArray(T[] arr, int startIndex, int endIndex) {
 		int realEndIndex = endIndex <= arr.length ? endIndex : arr.length;
@@ -143,6 +161,7 @@ public class ArrayUtils {
 	 * 反向
 	 * 
 	 * @param arr
+	 *            源数组，数组会被修改。<br>
 	 */
 	public static final <T> void reverse(T[] arr) {
 		T temp;
@@ -157,7 +176,8 @@ public class ArrayUtils {
 	 * 把二维数组降为一维数组
 	 * 
 	 * @param arrTwo
-	 * @return
+	 *            源二维数组
+	 * @return 新的一维数组
 	 */
 	public static final <T> T[] dimensionalityReduction(T[][] arrTwo) {
 		int size = 0;

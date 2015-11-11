@@ -1,4 +1,4 @@
-package code;
+package code.path;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -8,17 +8,14 @@ import java.net.URLDecoder;
 public class BasePathUtils {
 
 	/**
-	 * -----------------------------------------------------------------------
 	 * getAppPath需要一个当前程序使用的Java类的class属性参数，它可以返回打包过的
 	 * Java可执行文件（jar，war）所处的系统目录名或非打包Java程序所处的目录 注意：jar-in-jar中运行有误
 	 * 
-	 * @param cls为Class类型
+	 * @param cls
+	 *            为Class类型
 	 * @return 返回值为该类所在的Java程序运行的目录
-	 *         ----------------------------------------------
-	 *         ---------------------------
 	 */
-	@SuppressWarnings("rawtypes")
-	public static final String getAppPath(Class cls) {
+	public static final String getAppPath(Class<? extends Object> cls) {
 		// 检查用户传入的参数是否为空
 		if (cls == null) {
 			throw new java.lang.IllegalArgumentException("参数不能为空！");

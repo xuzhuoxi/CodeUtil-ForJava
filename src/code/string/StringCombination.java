@@ -12,9 +12,11 @@ public class StringCombination {
 	 * 组合过程是按顺序的，即不会出现source[1]+source[0]这重情况<br>
 	 * 并去除重复得到的字符串<br>
 	 * 
-	 * @param source字符串数组
-	 * @param dimenstion维度，指组合最多使用的字符串数
-	 * @return
+	 * @param source
+	 *            字符串数组
+	 * @param dimenstion
+	 *            维度，指组合最多使用的字符串数<br>
+	 * @return 二维数组，第一个数组为只有1个source元素的字符串数组，第二个为2个source元素，如止类推<br>
 	 */
 	public static final String[][] getTwoDimensionArray(String[] source, int dimenstion) {
 		return dimenstion(source, dimenstion, false);
@@ -24,10 +26,13 @@ public class StringCombination {
 	 * 使用字符串数组进行组合<br>
 	 * 组合过程是按顺序的，即不会出现source[1]+source[0]这重情况<br>
 	 * 
-	 * @param source字符串数据源
-	 * @param dimenstion维度，指组合最多使用的字符串数
-	 * @param repeat是否允许重复
-	 * @return
+	 * @param source
+	 *            字符串数据源
+	 * @param dimenstion
+	 *            维度，指组合最多使用的字符串数
+	 * @param repeat
+	 *            是否允许重复
+	 * @return 二维数组，第一个数组为只有1个source元素的字符串数组，第二个为2个source元素，如止类推<br>
 	 */
 	public static final String[][] getTwoDimensionArray(String[] source, int dimenstion, boolean repeat) {
 		return dimenstion(source, dimenstion, repeat);
@@ -37,7 +42,8 @@ public class StringCombination {
 	 * 把二维字符串数组降为一维字符串数组
 	 * 
 	 * @param arrTwo
-	 * @return
+	 *            二维字符串数组
+	 * @return 一维字符串数组
 	 */
 	public static final String[] dimensionalityReduction(String[][] arrTwo) {
 		return ArrayUtils.dimensionalityReduction(arrTwo);
@@ -48,10 +54,13 @@ public class StringCombination {
 	 * 组合过程是按顺序的，即不会出现source[1]+source[0]这重情况<br>
 	 * 为提高效率，区分了dimenstion=1,dimenstion=2,dimenstion>2三种情况进行处理
 	 * 
-	 * @param source字符串数据源
-	 * @param dimenstion维度，指组合最多使用的字符串数
-	 * @param repeat是否允许重复
-	 * @return
+	 * @param source
+	 *            字符串数据源
+	 * @param dimenstion
+	 *            维度，指组合最多使用的字符串数
+	 * @param repeat
+	 *            是否允许重复
+	 * @return 二维数组，第一个数组为只有1个source元素的字符串数组，第二个为2个source元素，如止类推<br>
 	 */
 	private static final String[][] dimenstion(String[] source, int dimenstion, boolean repeat) {
 		if (dimenstion < 1) {

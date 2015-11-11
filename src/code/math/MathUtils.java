@@ -12,8 +12,10 @@ public class MathUtils {
 	 * 组合行为基于数组顺序
 	 * 
 	 * @param m
+	 *            数据数量
 	 * @param n
-	 * @return
+	 *            选择个数
+	 * @return 组合个数
 	 */
 	public static final int getCombinationCount(int m, int n) {
 		int getlen = 0;
@@ -36,7 +38,7 @@ public class MathUtils {
 	 *            十进制数值
 	 * @param system
 	 *            不确定进制数组
-	 * @return
+	 * @return 由十进制数据组成的数组
 	 */
 	public static final int[] tenToCustomSystem(int value, int[] system) {
 		int[] rs = new int[system.length];

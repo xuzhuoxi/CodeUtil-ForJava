@@ -81,9 +81,10 @@ public class StringUtils {
 	 * 源"abc"，只会产出"ab"不会产出"ba"<br>
 	 * 
 	 * @param source
+	 *            源字符串
 	 * @param factorialLevel
 	 *            组合维度，最多使用多少个字符进行组合
-	 * @return
+	 * @return 组合字符串数组
 	 */
 	public static final String[] nonRepeatFactorial(String source, int factorialLevel) {
 		if (factorialLevel <= 0) {

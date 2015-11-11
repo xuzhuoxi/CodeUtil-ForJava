@@ -84,11 +84,11 @@ public class RegexpUtils {
 	public static final String REGEX_EMAIL = "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$";
 
 	/**
-	 * 验证InternetURL：“^http://([w-]+.)+[w-]+(/[w-./?%&=]*)?$”(这个描述的表达式不行)
+	 * 验证InternetURL
 	 */
 	public static final String REGEX_INTERNET_URL = "^((http|ftp|https)://)?[\\w\\-_]+(\\.[\\w\\-_]+)+([\\w\\-\\.,@?^=%&amp;:/~\\+#]*[\\w\\-\\@?^=%&amp;/~\\+#])?$";
 	/**
-	 * 验证电话号码：“^((d{3,4})|d{3,4}-)?d{7,8}$”(这个描述的表达式不行) <br>
+	 * 验证电话号码：
 	 * 固定电话<br>
 	 * 种类一："4008008888", "400-800-8888" 表达式:d{10}|d{3}-d{3}-d{4}<br>
 	 * 种类二："34751234"，"3475-1234" 表达式:d{8}|d{4}-d{4}<br>

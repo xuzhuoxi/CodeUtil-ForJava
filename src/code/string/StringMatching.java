@@ -14,8 +14,10 @@ public class StringMatching {
 	 * return:null<br>
 	 * 
 	 * @param source
+	 *            匹配参照源
 	 * @param expression
-	 * @return
+	 *            匹配输入
+	 * @return 布尔数组
 	 */
 	public static final boolean[] matching(String source, String expression) {
 		if (null == source || null == expression || expression.length() > source.length()) {
@@ -55,7 +57,8 @@ public class StringMatching {
 	 * 正常值[0,2] 2代表完全匹配
 	 * 
 	 * @param matchResult
-	 * @return
+	 *            布尔数组
+	 * @return 返回一个整数值，范围为[0,2]
 	 */
 	public static final double computeMatchintResult(boolean[] matchResult) {
 		boolean isFullMatching = true;

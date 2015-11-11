@@ -43,7 +43,7 @@ public class ArrayUtilsTest {
 		Character[] result = new Character[] { 'a', 'b', 'c', 'a', 'b', 'c' };
 		Character[] result2 = new Character[] { 'a', 'b', 'c' };
 		Character[] result3 = new Character[] { 'a', 'b', 'c' };
-		Assert.assertArrayEquals(result, ArrayUtils.addAll(result2, result3));
+		Assert.assertArrayEquals(result, ArrayUtils.mergeArray(result2, result3));
 	}
 
 	@Test

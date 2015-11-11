@@ -40,7 +40,9 @@ public class FileCopyUtils {
 	 * 正规复制文件方法，使用Java中的IO的API
 	 * 
 	 * @param source
+	 *            源文件
 	 * @param target
+	 *            目标文件
 	 * 
 	 */
 	@SuppressWarnings("unused")
@@ -69,7 +71,9 @@ public class FileCopyUtils {
 	 * 带缓冲
 	 * 
 	 * @param source
+	 *            源文件
 	 * @param target
+	 *            目标文件
 	 * 
 	 */
 	@SuppressWarnings("unused")
@@ -104,7 +108,9 @@ public class FileCopyUtils {
 	 * 不带缓冲
 	 * 
 	 * @param source
+	 *            源文件
 	 * @param target
+	 *            目标文件
 	 * 
 	 */
 	private static final void nioTransferCopy(File source, File target) {

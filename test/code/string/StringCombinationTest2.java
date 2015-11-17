@@ -2,8 +2,6 @@ package code.string;
 
 import org.junit.Test;
 
-import code.string.StringCombination;
-
 public class StringCombinationTest2 {
 
 	private static final String source0 = "ABCDEFGHIJKLMMOPQQ";
@@ -23,102 +21,95 @@ public class StringCombinationTest2 {
 	@Test
 	public void test0_1() {
 		String[] source = src0;
-		int dimestion = 1;
-		System.out.print("Start: (" + toString(source) + ")(" + dimestion + ")");
-		this.comsole(StringCombination.getTwoDimensionArray(source, dimestion));
-		this.comsole(StringCombination.getTwoDimensionArray(source, dimestion, true));
-		System.out.println("End————————————————————————－\n");
+		int dimesion = 1;
+		comsoleTest(source, dimesion);
 	}
 
 	@Test
 	public void test1_1() {
 		String[] source = src1;
-		int dimestion = 1;
-		System.out.print("Start: (" + toString(source) + ")(" + dimestion + ")");
-		this.comsole(StringCombination.getTwoDimensionArray(source, dimestion));
-		this.comsole(StringCombination.getTwoDimensionArray(source, dimestion, true));
-		System.out.println("End————————————————————————－\n");
+		int dimesion = 1;
+		comsoleTest(source, dimesion);
 	}
 
 	@Test
 	public void test2_1() {
 		String[] source = src2;
-		int dimestion = 1;
-		System.out.print("Start: (" + toString(source) + ")(" + dimestion + ")");
-		this.comsole(StringCombination.getTwoDimensionArray(source, dimestion));
-		this.comsole(StringCombination.getTwoDimensionArray(source, dimestion, true));
-		System.out.println("End————————————————————————－\n");
+		int dimesion = 1;
+		comsoleTest(source, dimesion);
 	}
 
 	@Test
 	public void test0_2() {
 		String[] source = src0;
-		int dimestion = 2;
-		System.out.print("Start: (" + toString(source) + ")(" + dimestion + ")");
-		this.comsole(StringCombination.getTwoDimensionArray(source, dimestion));
-		this.comsole(StringCombination.getTwoDimensionArray(source, dimestion, true));
-		System.out.println("End————————————————————————－\n");
+		int dimesion = 2;
+		comsoleTest(source, dimesion);
 	}
 
 	@Test
 	public void test1_2() {
 		String[] source = src1;
-		int dimestion = 2;
-		System.out.print("Start: (" + toString(source) + ")(" + dimestion + ")");
-		this.comsole(StringCombination.getTwoDimensionArray(source, dimestion));
-		this.comsole(StringCombination.getTwoDimensionArray(source, dimestion, true));
-		System.out.println("End————————————————————————－\n");
+		int dimesion = 2;
+		comsoleTest(source, dimesion);
 	}
 
 	@Test
 	public void test2_2() {
 		String[] source = src2;
-		int dimestion = 2;
-		System.out.print("Start: (" + toString(source) + ")(" + dimestion + ")");
-		this.comsole(StringCombination.getTwoDimensionArray(source, dimestion));
-		this.comsole(StringCombination.getTwoDimensionArray(source, dimestion, true));
-		System.out.println("End————————————————————————－\n");
+		int dimesion = 2;
+		comsoleTest(source, dimesion);
 	}
 
 	@Test
 	public void test0_4() {
 		String[] source = src0;
-		int dimestion = 4;
-		System.out.print("Start: (" + toString(source) + ")(" + dimestion + ")");
-		this.comsole(StringCombination.getTwoDimensionArray(source, dimestion));
-		this.comsole(StringCombination.getTwoDimensionArray(source, dimestion, true));
-		System.out.println("End————————————————————————－\n");
+		int dimesion = 4;
+		comsoleTest(source, dimesion);
 	}
 
 	@Test
 	public void test1_4() {
 		String[] source = src1;
-		int dimestion = 4;
-		System.out.print("Start: (" + toString(source) + ")(" + dimestion + ")");
-		this.comsole(StringCombination.getTwoDimensionArray(source, dimestion));
-		this.comsole(StringCombination.getTwoDimensionArray(source, dimestion, true));
-		System.out.println("End————————————————————————－\n");
+		int dimesion = 4;
+		comsoleTest(source, dimesion);
 	}
 
 	@Test
 	public void test2_4() {
 		String[] source = src2;
-		int dimestion = 4;
-		System.out.print("Start: (" + toString(source) + ")(" + dimestion + ")");
-		this.comsole(StringCombination.getTwoDimensionArray(source, dimestion));
-		this.comsole(StringCombination.getTwoDimensionArray(source, dimestion, true));
-		System.out.println("End————————————————————————－\n");
+		int dimesion = 4;
+		comsoleTest(source, dimesion);
 	}
 
 	@Test
 	public void test() {
-		String[] source = src2;
-		int dimestion = 4;
-		System.out.print("Start: (" + toString(source) + ")(" + dimestion + ")");
+		String[] source = src0;
+		int dimesion = 4;
+		System.out.print("Start: (" + toString(source) + ")(" + dimesion + ")");
 		this.comsole(
-				StringCombination.dimensionalityReduction(StringCombination.getTwoDimensionArray(source, dimestion)));
+				StringCombination.dimensionalityReduction(StringCombination.getTwoDimensionArray(source, dimesion)));
 		this.comsole(StringCombination
-				.dimensionalityReduction(StringCombination.getTwoDimensionArray(source, dimestion, true)));
+				.dimensionalityReduction(StringCombination.getTwoDimensionArray(source, dimesion, true)));
+		System.out.println("End————————————————————————－\n");
+	}
+
+	@Test
+	public void test2() {
+		String[] source = src0;
+		int dimesion = 5;
+		System.out.print("Start: (" + toString(source) + ")(" + dimesion + ")");
+		this.comsole(StringCombination.getDimensionCombinationArray(source, dimesion, false));
+		this.comsole(StringCombination.getDimensionCombinationArray(source, dimesion, true));
+		System.out.println("End————————————————————————－\n");
+	}
+
+	private void comsoleTest(String[] source, int dimesion) {
+		System.out.print("Start: (" + toString(source) + ")(" + dimesion + ")");
+		this.comsole(StringCombination.getTwoDimensionArray(source, dimesion));
+		this.comsole(StringCombination.getTwoDimensionArray(source, dimesion, true));
+		System.out.println("\n…………………………………………");
+		this.comsole(StringCombination.getDimensionCombinationArray(source, dimesion, false));
+		this.comsole(StringCombination.getDimensionCombinationArray(source, dimesion, true));
 		System.out.println("End————————————————————————－\n");
 	}
 

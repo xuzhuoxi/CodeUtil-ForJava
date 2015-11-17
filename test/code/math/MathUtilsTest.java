@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class MathUtilsTest {
-
 	@Test
 	public void testGetCombinationCount() {
 		int[] len = { 5, 4, 3 };
@@ -30,5 +29,19 @@ public class MathUtilsTest {
 			}
 			System.out.println();
 		}
+	}
+
+	@Test
+	public void testgetDimensionCombinationIndex() {
+		Integer[][][] rs = MathUtils.getDimensionCombinationIndex(5, 3);
+		for (Integer[][] arrs : rs) {
+			for (Integer[] arr : arrs) {
+				for (Integer i : arr) {
+					System.out.print(" " + i);
+				}
+				System.out.println();
+			}
+		}
+
 	}
 }

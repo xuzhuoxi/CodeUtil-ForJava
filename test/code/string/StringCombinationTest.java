@@ -35,6 +35,8 @@ public class StringCombinationTest {
 					ArrayUtils.dimensionalityReduction(StringCombination.getTwoDimensionArray(sourceArr, d, true)));
 			arrayEquals(result,
 					ArrayUtils.dimensionalityReduction(StringCombination.getTwoDimensionArray(sourceArr, d, false)));
+			arrayEquals(resultRepeat, StringCombination.getDimensionCombinationArray(sourceArr, d, true));
+			arrayEquals(result, StringCombination.getDimensionCombinationArray(sourceArr, d, false));
 		}
 	}
 

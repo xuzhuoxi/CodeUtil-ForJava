@@ -13,8 +13,8 @@ public class RegexpUtilsTest {
 	 */
 	@Test
 	public void testRegex01Integer() {
-		String[] integers = { "0", "1", "-1", "+1", "01", "-+1" };
-		boolean[] results = { true, true, true, true, false, false };
+		String[] integers = { "0", "1", "-1", "+1", "01", "-+1", "1.245" };
+		boolean[] results = { true, true, true, true, false, false, false };
 		Assert.assertEquals(integers.length, integers.length);
 		for (int i = 0; i < integers.length && i < results.length; i++) {
 			// System.out.println("Info(i=" + i + "):" + integers[i] + " " +

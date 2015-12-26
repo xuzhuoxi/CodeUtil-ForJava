@@ -11,7 +11,7 @@ public class RegexpUtils {
 	/**
 	 * ^-?[1-9]d*|0$ //匹配整数
 	 */
-	public static final String REGEX_INTEGER = "^[\\-\\+]?[1-9]\\d*|0$";
+	public static final String REGEX_INTEGER = "^[\\-\\+]?([1-9]\\d*|0)$";
 	/**
 	 * +?[1-9]d*$ //匹配正整数(包括带+号的正数)
 	 */

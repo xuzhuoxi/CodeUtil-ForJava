@@ -114,6 +114,23 @@ public class ArrayUtils {
 	}
 
 	/**
+	 * 合并两个数组
+	 * @param arr0
+	 * @param arr1
+	 * @return
+	 */
+	public static final byte[] mergeArray(byte[] arr0, byte[] arr1) {
+		if (null == arr0 || null == arr1) {
+			return null;
+		}
+		final int baseLen = null == arr0 ? 0 : arr0.length;
+		final int addLen = null == arr1 ? 0 : arr1.length;
+		byte[] rs = Arrays.copyOf(arr0, baseLen + addLen);
+		System.arraycopy(arr1, 0, rs, baseLen, addLen);
+		return rs;
+	}
+
+	/**
 	 * 分割一个字符串数组，获得一个新的字符串数组从startIndex位到末尾
 	 * 
 	 * @param arr

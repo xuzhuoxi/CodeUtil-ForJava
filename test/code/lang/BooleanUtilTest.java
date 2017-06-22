@@ -2,7 +2,7 @@ package code.lang;
 
 import org.junit.Test;
 
-public class TestBooleanUtil {
+public class BooleanUtilTest {
 
 	@Test
 	public void testBooleanObject() {

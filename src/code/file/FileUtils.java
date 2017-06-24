@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -77,9 +78,11 @@ public class FileUtils {
 
 	/**
 	 * 取文件夹下全部扩展名为extName中的一个的文件路径<br>
+	 * 
 	 * @param folder
 	 * @param extNames
-	 * @param recursive 是否递归全部子文件夹
+	 * @param recursive
+	 *            是否递归全部子文件夹
 	 * @return
 	 */
 	public static final File[] getFiles(String folder, String[] extNames, boolean recursive) {
@@ -168,11 +171,25 @@ public class FileUtils {
 	 * @return
 	 */
 	public static final String readFileContent(String filePath, String charsetName) {
+		Charset charset = Charset.forName(charsetName);
+		return readFileContent(filePath, charset);
+	}
+
+	/**
+	 * 读取字符文件内容
+	 * 
+	 * @param filePath
+	 *            文件路径
+	 * @param charsetName
+	 *            字符集
+	 * @return
+	 */
+	public static final String readFileContent(String filePath, Charset charset) {
 		File file = new File(filePath);
 		BufferedReader fr = null;
 		StringBuilder sb = new StringBuilder("");
 		try {
-			fr = new BufferedReader(new InputStreamReader(new FileInputStream(file), charsetName));
+			fr = new BufferedReader(new InputStreamReader(new FileInputStream(file), charset));
 			boolean first = true;
 			while (fr.ready()) {
 				if (first) {

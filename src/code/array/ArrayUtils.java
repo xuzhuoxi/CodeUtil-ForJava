@@ -115,6 +115,7 @@ public class ArrayUtils {
 
 	/**
 	 * 合并两个数组
+	 * 
 	 * @param arr0
 	 * @param arr1
 	 * @return
@@ -140,15 +141,20 @@ public class ArrayUtils {
 	 * @return 新的数组
 	 */
 	public static final <T> T[] subArray(T[] arr, int startIndex) {
-		if (startIndex <= arr.length) {
-			int len = arr.length;
-			int newLen = len - startIndex;
-			T[] newArr = Arrays.copyOf(arr, newLen);
-			System.arraycopy(arr, startIndex, newArr, 0, newLen);
-			return newArr;
-		} else {
-			return null;
-		}
+		return Arrays.copyOfRange(arr, startIndex, arr.length);
+	}
+
+	/**
+	 * 分割一个字符串数组，获得一个新的字符串数组从startIndex位到末尾
+	 * 
+	 * @param arr
+	 *            源数组
+	 * @param startIndex
+	 *            开始索引
+	 * @return 新的数组
+	 */
+	public static final byte[] subArray(byte[] arr, int startIndex) {
+		return Arrays.copyOfRange(arr, startIndex, arr.length);
 	}
 
 	/**
@@ -163,15 +169,22 @@ public class ArrayUtils {
 	 * @return 新的数组
 	 */
 	public static final <T> T[] subArray(T[] arr, int startIndex, int endIndex) {
-		int realEndIndex = endIndex <= arr.length ? endIndex : arr.length;
-		int newLen = realEndIndex - startIndex;
-		if (startIndex <= arr.length && newLen > 0) {
-			T[] newArr = Arrays.copyOf(arr, newLen);
-			System.arraycopy(arr, startIndex, newArr, 0, newLen);
-			return newArr;
-		} else {
-			return null;
-		}
+		return Arrays.copyOfRange(arr, startIndex, endIndex);
+	}
+
+	/**
+	 * 分割一个字符串数组，获得一个新的字符串数组从startIndex位到endIndex(不包括)位
+	 * 
+	 * @param arr
+	 *            源数组
+	 * @param startIndex
+	 *            开始索引
+	 * @param endIndex
+	 *            结束索引(不包括)
+	 * @return 新的数组
+	 */
+	public static final byte[] subArray(byte[] arr, int startIndex, int endIndex) {
+		return Arrays.copyOfRange(arr, startIndex, endIndex);
 	}
 
 	/**

@@ -30,8 +30,9 @@ public class BasePathUtils {
 		if (pack != null) {
 			String packName = pack.getName();
 			// 此处简单判定是否是Java基础类库，防止用户传入JDK内置的类库
-			if (packName.startsWith("java.") || packName.startsWith("javax."))
+			if (packName.startsWith("java.") || packName.startsWith("javax.")) {
 				throw new java.lang.IllegalArgumentException("不要传送系统类！");
+			}
 			// 在类的名称中，去掉包名的部分，获得类的文件名
 			clsName = clsName.substring(packName.length() + 1);
 			// 判定包名是否是简单包名，如果是，则直接将包名转换为路径，
@@ -83,7 +84,17 @@ public class BasePathUtils {
 	 * @return 返回值为该类所在的Java程序运行的目录
 	 */
 	public static final String getBasePath() {
-		URL url = BasePathUtils.class.getProtectionDomain().getCodeSource().getLocation();
+		return BasePathUtils.getBasePath(BasePathUtils.class);
+	}
+
+	/**
+	 * 可以返回打包过的 Java可执行文件（jar，war）所处的系统目录名或非打包Java程序所处的目录 支持jar-in-jar内部使用
+	 * 
+	 * @param cls
+	 * @return 返回值为该类所在的Java程序运行的目录
+	 */
+	public static final String getBasePath(Class<? extends Object> cls) {
+		URL url = cls.getProtectionDomain().getCodeSource().getLocation();
 		String filePath = null;
 		try {
 			filePath = URLDecoder.decode(url.getPath(), "UTF-8");
@@ -97,4 +108,5 @@ public class BasePathUtils {
 		filePath = file.getAbsolutePath();
 		return filePath;
 	}
+
 }

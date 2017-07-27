@@ -132,6 +132,42 @@ public class ArrayUtils {
 	}
 
 	/**
+	 * 追加到数组
+	 * 
+	 * @param arr0
+	 *            数组1
+	 * @param item
+	 *            数据
+	 * @return 新的数组
+	 */
+	public static final <T> T[] append2Array(T[] arr0, T item) {
+		if (null == arr0 || null == item) {
+			return null;
+		}
+		final int baseLen = null == arr0 ? 0 : arr0.length;
+		T[] rs = Arrays.copyOf(arr0, baseLen + 1);
+		rs[rs.length - 1] = item;
+		return rs;
+	}
+
+	/**
+	 * 追加到数组
+	 * 
+	 * @param arr0
+	 * @param item
+	 * @return
+	 */
+	public static final byte[] append2Array(byte[] arr0, byte item) {
+		if (null == arr0) {
+			return null;
+		}
+		final int baseLen = null == arr0 ? 0 : arr0.length;
+		byte[] rs = Arrays.copyOf(arr0, baseLen + 1);
+		rs[rs.length - 1] = item;
+		return rs;
+	}
+
+	/**
 	 * 分割一个字符串数组，获得一个新的字符串数组从startIndex位到末尾
 	 * 
 	 * @param arr

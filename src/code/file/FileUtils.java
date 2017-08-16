@@ -3,8 +3,10 @@ package code.file;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
@@ -148,6 +150,99 @@ public class FileUtils {
 	 */
 	public static final boolean isFileCanWrite(String fileFullPath) {
 		return new File(fileFullPath).canWrite();
+	}
+
+	/**
+	 * 写字符文件
+	 * 
+	 * @param filePath
+	 * @param content
+	 *            以UTF-8格式写入
+	 */
+	public static final void writeTextFile(String filePath, String content) {
+		Charset charset = Charset.forName("UTF-8");
+		writeTextFile(filePath, content, charset);
+	}
+
+	/**
+	 * 写字符文件
+	 * 
+	 * @param filePath
+	 * @param content
+	 * @param charsetName
+	 */
+	public static final void writeTextFile(String filePath, String content, String charsetName) {
+		Charset charset = Charset.forName(charsetName);
+		writeTextFile(filePath, content, charset);
+	}
+
+	/**
+	 * 写字符文件
+	 * 
+	 * @param filePath
+	 * @param content
+	 * @param charset
+	 */
+	public static final void writeTextFile(String filePath, String content, Charset charset) {
+		File file = null;
+		FileOutputStream fos = null;
+		OutputStreamWriter osw = null;
+		try {
+			file = new File(filePath);
+			if (!file.exists()) {
+				file.createNewFile();
+			}
+			fos = new FileOutputStream(file);
+			osw = new OutputStreamWriter(fos, charset);
+			osw.write(content);
+			osw.flush();
+			osw.close();
+			fos.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (osw != null) {
+					osw.close();
+				}
+				if (fos != null) {
+					fos.close();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	/**
+	 * 写二进制文件
+	 * 
+	 * @param filePath
+	 * @param content
+	 */
+	public static final void writeBinaryFile(String filePath, byte[] content) {
+		FileOutputStream fos = null;
+		File file = null;
+		try {
+			file = new File(filePath);
+			if (!file.exists()) {
+				file.createNewFile();
+			}
+			fos = new FileOutputStream(file);
+			fos.write(content);
+			fos.flush();
+			fos.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (fos != null) {
+					fos.close();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	/**

@@ -1,5 +1,6 @@
 package code.file;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -308,5 +309,41 @@ public class FileUtils {
 				}
 			}
 		}
+	}
+
+	/**
+	 * 读二进制文件内容<br>
+	 * 只适用于小文件
+	 * 
+	 * @param filePath
+	 * @return
+	 */
+	public static final byte[] readBinaryContent(String filePath) {
+		File file = new File(filePath);
+		int len = (int) file.length();
+		byte[] rs = new byte[len];
+		FileInputStream fis = null;
+		BufferedInputStream bis = null;
+		try {
+			fis = new FileInputStream(file);
+			bis = new BufferedInputStream(fis);
+			bis.read(rs, 0, len);
+			bis.close();
+			fis.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (null != bis) {
+					bis.close();
+				}
+				if (null != fis) {
+					fis.close();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return rs;
 	}
 }

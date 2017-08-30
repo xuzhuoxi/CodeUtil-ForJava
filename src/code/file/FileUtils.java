@@ -55,8 +55,10 @@ public class FileUtils {
 	 * 不包含子文件夹
 	 * 
 	 * @param folder
-	 * @param extName
-	 * @return
+	 *            文件夹路径<br>
+	 * @param extNames
+	 *            扩展名数组<br>
+	 * @return 文件数组
 	 */
 	public static final File[] getFiles(String folder, String[] extNames) {
 		File file = new File(folder);
@@ -83,10 +85,12 @@ public class FileUtils {
 	 * 取文件夹下全部扩展名为extName中的一个的文件路径<br>
 	 * 
 	 * @param folder
+	 *            文件夹路径<br>
 	 * @param extNames
+	 *            扩展名数组<br>
 	 * @param recursive
 	 *            是否递归全部子文件夹
-	 * @return
+	 * @return 文件数组
 	 */
 	public static final File[] getFiles(String folder, String[] extNames, boolean recursive) {
 		if (!recursive) {
@@ -127,7 +131,8 @@ public class FileUtils {
 	 * 文件或文件夹是否存在
 	 * 
 	 * @param fileFullPath
-	 * @return
+	 *            文件路径<br>
+	 * @return true:存在，false不存在
 	 */
 	public static final boolean isExists(String fileFullPath) {
 		return new File(fileFullPath).exists();
@@ -137,7 +142,8 @@ public class FileUtils {
 	 * 是文件夹
 	 * 
 	 * @param fileFullPath
-	 * @return
+	 *            文件路径<br>
+	 * @return true:是，false不是
 	 */
 	public static final boolean isFolder(String fileFullPath) {
 		return new File(fileFullPath).isDirectory();
@@ -147,7 +153,8 @@ public class FileUtils {
 	 * 文件或文件夹是否可写
 	 * 
 	 * @param fileFullPath
-	 * @return
+	 *            文件路径<br>
+	 * @return true:可写，false不可写
 	 */
 	public static final boolean isFileCanWrite(String fileFullPath) {
 		return new File(fileFullPath).canWrite();
@@ -157,6 +164,7 @@ public class FileUtils {
 	 * 写字符文件
 	 * 
 	 * @param filePath
+	 *            文件路径<br>
 	 * @param content
 	 *            以UTF-8格式写入
 	 */
@@ -169,8 +177,11 @@ public class FileUtils {
 	 * 写字符文件
 	 * 
 	 * @param filePath
+	 *            文件路径<br>
 	 * @param content
+	 *            文本内容<br>
 	 * @param charsetName
+	 *            编码格式<br>
 	 */
 	public static final void writeTextFile(String filePath, String content, String charsetName) {
 		Charset charset = Charset.forName(charsetName);
@@ -181,8 +192,12 @@ public class FileUtils {
 	 * 写字符文件
 	 * 
 	 * @param filePath
+	 *            文件路径<br>
 	 * @param content
+	 *            文件路径<br>
+	 *            文本内容<br>
 	 * @param charset
+	 *            编码格式<br>
 	 */
 	public static final void writeTextFile(String filePath, String content, Charset charset) {
 		File file = null;
@@ -219,7 +234,9 @@ public class FileUtils {
 	 * 写二进制文件
 	 * 
 	 * @param filePath
+	 *            文件路径<br>
 	 * @param content
+	 *            文本内容<br>
 	 */
 	public static final void writeBinaryFile(String filePath, byte[] content) {
 		FileOutputStream fos = null;
@@ -251,7 +268,7 @@ public class FileUtils {
 	 * 
 	 * @param filePath
 	 *            文件路径
-	 * @return
+	 * @return 文本内容
 	 */
 	public static final String readFileContent(String filePath) {
 		return readFileContent(filePath, "UTF-8");
@@ -264,7 +281,7 @@ public class FileUtils {
 	 *            文件路径
 	 * @param charsetName
 	 *            字符集
-	 * @return
+	 * @return 文本内容
 	 */
 	public static final String readFileContent(String filePath, String charsetName) {
 		Charset charset = Charset.forName(charsetName);
@@ -276,9 +293,9 @@ public class FileUtils {
 	 * 
 	 * @param filePath
 	 *            文件路径
-	 * @param charsetName
+	 * @param charset
 	 *            字符集
-	 * @return
+	 * @return 文本内容
 	 */
 	public static final String readFileContent(String filePath, Charset charset) {
 		File file = new File(filePath);
@@ -316,7 +333,8 @@ public class FileUtils {
 	 * 只适用于小文件
 	 * 
 	 * @param filePath
-	 * @return
+	 *            文件路径
+	 * @return 字节数组
 	 */
 	public static final byte[] readBinaryContent(String filePath) {
 		File file = new File(filePath);

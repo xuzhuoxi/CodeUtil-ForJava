@@ -91,6 +91,7 @@ public class BasePathUtils {
 	 * 可以返回打包过的 Java可执行文件（jar，war）所处的系统目录名或非打包Java程序所处的目录 支持jar-in-jar内部使用
 	 * 
 	 * @param cls
+	 *            类定义
 	 * @return 返回值为该类所在的Java程序运行的目录
 	 */
 	public static final String getBasePath(Class<? extends Object> cls) {

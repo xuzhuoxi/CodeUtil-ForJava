@@ -11,7 +11,9 @@ public class DateUtil {
 	 * 
 	 * @param time
 	 *            Date 日期<br>
-	 * @return String 字符串<br>
+	 * @param format
+	 *            格式字符串<br>
+	 * @return 表达字符串
 	 */
 	public static String dateToString(Date time, String format) {
 		SimpleDateFormat formatter = new SimpleDateFormat(format);

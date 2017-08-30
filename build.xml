@@ -1,4 +1,4 @@
-<project name="P2009_Tools.build" default="all" basedir="./">
+<project name="CodeUtil" default="all" basedir="./">
 	<!--ANT 1.7 is required                  	-->
 	<property environment="env" />
 	<property name="src.main.dir" value="${basedir}/src" />
@@ -13,6 +13,7 @@
 	<property name="docs.dist.dir" value="${dist.dir}/docs" />
 	<property name="release.dist.dir" value="${dist.dir}/release" />
 	<property name="res.dir" value="${basedir}/res" />
+	<property name="version" value="1.0" />
 
 	<!-- 初始化classpath -->
 	<zipfileset id="jar_lib" dir="${lib.dir}">
@@ -61,13 +62,13 @@
 	</target>
 	<!-- 打包成可执行文件jar -->
 	<target name="jar" description="打包中间码">
-		<property name="jarName" value="codeutil" />
+		<property name="jarName" value="codeutil_${version}" />
 		<jar destfile="${release.dist.dir}/${jarName}.jar" update="false">
 			<fileset dir="${bin.main}" />
 		</jar>
 	</target>
 	<target name="jar-src" description="打包源码">
-		<property name="jarName" value="codeutil-src" />
+		<property name="jarName" value="codeutil-src_${version}" />
 		<jar destfile="${release.dist.dir}/${jarName}.jar" update="false">
 			<fileset dir="${src.main.dir}" />
 		</jar>

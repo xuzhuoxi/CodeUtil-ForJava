@@ -18,6 +18,8 @@ public class ArrayUtils {
 	 * 
 	 * @param ary
 	 *            输入数组
+	 * @param <T>
+	 *            类型
 	 * @return 新的数组
 	 */
 	public static final <T> T[] cleanRepeat2List(T[] ary) {
@@ -41,6 +43,8 @@ public class ArrayUtils {
 	 *            对象数组
 	 * @param arr1
 	 *            对象数组
+	 * @param <T>
+	 *            类型
 	 * @return 如果两个数组长度相等且每个数组对象依次相等，则返回true<br>
 	 *         否则返回false<br>
 	 *         相等指的是equals方法调用为true<br>
@@ -68,6 +72,8 @@ public class ArrayUtils {
 	 *            源数据
 	 * @param index
 	 *            移除标志位
+	 * @param <T>
+	 *            类型
 	 * @return 新的数组
 	 */
 	public static final <T> T[] remove(T[] data, int index) {
@@ -84,6 +90,8 @@ public class ArrayUtils {
 	 *            数组
 	 * @param obj
 	 *            对象
+	 * @param <T>
+	 *            类型
 	 * @return 如果数组只有一个对象与obj相等，则返回true<br>
 	 * @see Object#equals(Object)
 	 */
@@ -100,6 +108,8 @@ public class ArrayUtils {
 	 *            数组1
 	 * @param arr1
 	 *            数组2
+	 * @param <T>
+	 *            类型
 	 * @return 新的数组
 	 */
 	public static final <T> T[] mergeArray(T[] arr0, T[] arr1) {
@@ -117,8 +127,10 @@ public class ArrayUtils {
 	 * 合并两个数组
 	 * 
 	 * @param arr0
+	 *            第一个字节数组
 	 * @param arr1
-	 * @return
+	 *            第二个字节数组
+	 * @return 新数组
 	 */
 	public static final byte[] mergeArray(byte[] arr0, byte[] arr1) {
 		if (null == arr0 || null == arr1) {
@@ -138,6 +150,8 @@ public class ArrayUtils {
 	 *            数组1
 	 * @param item
 	 *            数据
+	 * @param <T>
+	 *            类型
 	 * @return 新的数组
 	 */
 	public static final <T> T[] append2Array(T[] arr0, T item) {
@@ -154,8 +168,10 @@ public class ArrayUtils {
 	 * 追加到数组
 	 * 
 	 * @param arr0
+	 *            字节数组
 	 * @param item
-	 * @return
+	 *            字节
+	 * @return 新数组
 	 */
 	public static final byte[] append2Array(byte[] arr0, byte item) {
 		if (null == arr0) {
@@ -174,6 +190,8 @@ public class ArrayUtils {
 	 *            源数组
 	 * @param startIndex
 	 *            开始索引
+	 * @param <T>
+	 *            类型
 	 * @return 新的数组
 	 */
 	public static final <T> T[] subArray(T[] arr, int startIndex) {
@@ -202,6 +220,8 @@ public class ArrayUtils {
 	 *            开始索引
 	 * @param endIndex
 	 *            结束索引(不包括)
+	 * @param <T>
+	 *            类型
 	 * @return 新的数组
 	 */
 	public static final <T> T[] subArray(T[] arr, int startIndex, int endIndex) {
@@ -228,6 +248,8 @@ public class ArrayUtils {
 	 * 
 	 * @param arr
 	 *            源数组，数组会被修改。<br>
+	 * @param <T>
+	 *            类型
 	 */
 	public static final <T> void reverse(T[] arr) {
 		T temp;
@@ -243,6 +265,8 @@ public class ArrayUtils {
 	 * 
 	 * @param arrTwo
 	 *            源二维数组
+	 * @param <T>
+	 *            类型
 	 * @return 新的一维数组
 	 */
 	public static final <T> T[] dimensionalityReduction(T[][] arrTwo) {
@@ -260,5 +284,4 @@ public class ArrayUtils {
 		}
 		return rs;
 	}
-
 }

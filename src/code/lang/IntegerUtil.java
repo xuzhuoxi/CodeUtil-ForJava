@@ -2,6 +2,13 @@ package code.lang;
 
 public class IntegerUtil {
 
+	/**
+	 * 字符串 转 Integer
+	 * 
+	 * @param value
+	 *            字符串
+	 * @return 整数值
+	 */
 	public static final Integer fromString(String value) {
 		int iValue = 0;
 		try {
@@ -18,7 +25,8 @@ public class IntegerUtil {
 	 * byte 数组转 int
 	 * 
 	 * @param values
-	 * @return
+	 *            由字节数组表示的整数
+	 * @return 整数值
 	 */
 	public static int toInt(byte[] values) {
 		int len = values.length;
@@ -43,9 +51,12 @@ public class IntegerUtil {
 
 	/**
 	 * int 转为 byte数组,
-	 * @param value int值
-	 * @param byteCount byte数组长度
-	 * @return
+	 * 
+	 * @param value
+	 *            int值
+	 * @param byteCount
+	 *            byte数组长度
+	 * @return 字节数组
 	 */
 	public static byte[] toByteArray(int value, int byteCount) {
 		switch (byteCount) {
@@ -80,7 +91,8 @@ public class IntegerUtil {
 	 * int 转 byte数组
 	 * 
 	 * @param value
-	 * @return
+	 *            整数值
+	 * @return 字节数组
 	 */
 	public static byte[] toByteArray(int value) {
 		return toByteArray(value, 4);

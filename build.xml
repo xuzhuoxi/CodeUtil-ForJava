@@ -56,7 +56,7 @@
 	<target name="compile.main">
 		<delete dir="${bin.main}" />
 		<mkdir dir="${bin.main}" />
-		<javac srcdir="${src.main.dir}" destdir="${bin.main}" encoding="UTF-8" debug="true" includeantruntime="false"  source="1.6" target="1.6">
+		<javac srcdir="${src.main.dir}" destdir="${bin.main}" encoding="UTF-8" debug="false" includeantruntime="false"  source="1.6" target="1.6">
 			<classpath refid="id_classpath" />
 		</javac>
 	</target>

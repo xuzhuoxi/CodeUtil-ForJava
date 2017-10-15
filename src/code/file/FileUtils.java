@@ -206,6 +206,7 @@ public class FileUtils {
 		try {
 			file = new File(filePath);
 			if (!file.exists()) {
+				file.getParentFile().mkdirs();
 				file.createNewFile();
 			}
 			fos = new FileOutputStream(file);
@@ -244,6 +245,7 @@ public class FileUtils {
 		try {
 			file = new File(filePath);
 			if (!file.exists()) {
+				file.getParentFile().mkdirs();
 				file.createNewFile();
 			}
 			fos = new FileOutputStream(file);

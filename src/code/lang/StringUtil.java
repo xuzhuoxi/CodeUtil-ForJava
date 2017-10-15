@@ -30,6 +30,27 @@ public class StringUtil {
 		return value.getBytes(charset);
 	}
 
+	public static String changeCharset(String str, String fromCharsetName, String toCharsetName) {
+		Charset fromCharset = Charset.forName(fromCharsetName);
+		Charset toCharset = Charset.forName(toCharsetName);
+		return changeCharset(str, fromCharset, toCharset);
+	}
+
+	public static String changeCharset(String str, String fromCharsetName, Charset toCharset) {
+		Charset fromCharset = Charset.forName(fromCharsetName);
+		return changeCharset(str, fromCharset, toCharset);
+	}
+
+	public static String changeCharset(String str, Charset fromCharset, String toCharsetName) {
+		Charset toCharset = Charset.forName(toCharsetName);
+		return changeCharset(str, fromCharset, toCharset);
+	}
+
+	public static String changeCharset(String str, Charset fromCharset, Charset toCharset) {
+		String rs = new String(str.getBytes(fromCharset), toCharset);
+		return rs;
+	}
+
 	private StringUtil() {
 	}
 }

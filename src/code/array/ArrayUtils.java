@@ -261,6 +261,21 @@ public class ArrayUtils {
 	}
 
 	/**
+	 * 反向
+	 * 
+	 * @param arr
+	 *            源数组，数组会被修改。<br>
+	 */
+	public static final void reverse(byte[] arr) {
+		byte temp;
+		for (int i = 0; i < arr.length / 2; i++) {
+			temp = arr[i];
+			arr[i] = arr[arr.length - i - 1];
+			arr[arr.length - i - 1] = temp;
+		}
+	}
+
+	/**
 	 * 把二维数组降为一维数组
 	 * 
 	 * @param arrTwo

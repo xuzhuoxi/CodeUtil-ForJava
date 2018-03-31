@@ -3,7 +3,7 @@ package code.lang;
 public class BooleanUtil {
 
 	public static final boolean fromString(String stringValue) {
-		int iValue = IntegerUtil.fromString(stringValue);
+		int iValue = NumberUtil.shortFromString(stringValue);
 		if (iValue > 0) {
 			return true;
 		} else {

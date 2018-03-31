@@ -117,6 +117,28 @@ public class NumberUtil {
 		return buffer4.array();
 	}
 
+	/**
+	 * int 转 byte数组
+	 * 
+	 * @param value
+	 *            整数值
+	 * @param byteCount
+	 *            输出位数
+	 * @return
+	 */
+	public static byte[] toByteArray(int value, int byteCount) {
+		switch (byteCount) {
+		case 1:
+			return new byte[] { (byte) value };
+		case 2:
+			return NumberUtil.toByteArray((float) value);
+		case 4:
+			return NumberUtil.toByteArray(value);
+		default:
+			throw new Error("byteCount value error: " + byteCount);
+		}
+	}
+
 	// long-----------------------------
 	/**
 	 * 字符串 转 long

@@ -186,6 +186,23 @@ public class NumberUtil {
 	 * 
 	 * @param value
 	 *            整数值
+	 * @param byteCount
+	 *            输出位数
+	 * @return
+	 */
+	public static byte[] toByteArray(long value, int byteCount) {
+		if (8 == byteCount) {
+			return toByteArray(value);
+		} else {
+			return toByteArray((int) value, byteCount);// 溢出时，value会变为负数int
+		}
+	}
+
+	/**
+	 * long 转 byte数组
+	 * 
+	 * @param value
+	 *            整数值
 	 * @return 字节数组
 	 */
 	public static byte[] toByteArray(long value) {

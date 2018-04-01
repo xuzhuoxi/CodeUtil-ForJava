@@ -8,12 +8,24 @@ import org.junit.Test;
 public class NumberUtilTest {
 
 	@Test
+	public void testOverflow(){
+		System.out.println(Integer.MAX_VALUE);
+		String uintMax = "4294967295";
+		int i = NumberUtil.intFromString(uintMax);
+		System.out.println(i);
+		long i2 = Long.parseLong(uintMax);
+		System.out.println(i2);
+		System.out.println((int)(i2-10));
+	}
+	
+	@Test
 	public void testShort() {
-		short i = -129;
+		short i = 99;
 		byte[] ba = NumberUtil.toByteArray(i);
 		int i2 = NumberUtil.toShort(ba);
-		System.out.println(
-				i + "," + new DecimalFormat("0000").format(i) + "|" + i2 + "," + new DecimalFormat("0000").format(i2));
+		int i3 = NumberIOUtil.readShort(ba);
+		System.out.println(i + "," + new DecimalFormat("0000").format(i) + "|" + i2 + ","
+				+ new DecimalFormat("0000").format(i2) + "|" + i3 + "," + new DecimalFormat("0000").format(i3));
 		String str = "";
 		for (byte b : ba) {
 			str = str + " " + b;

@@ -131,7 +131,7 @@ public class NumberUtil {
 		case 1:
 			return new byte[] { (byte) value };
 		case 2:
-			return NumberUtil.toByteArray((float) value);
+			return NumberUtil.toByteArray((short) value);
 		case 4:
 			return NumberUtil.toByteArray(value);
 		default:

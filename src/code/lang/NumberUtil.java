@@ -124,7 +124,7 @@ public class NumberUtil {
 	 *            整数值
 	 * @param byteCount
 	 *            输出位数
-	 * @return
+	 * @return 字节数组
 	 */
 	public static byte[] toByteArray(int value, int byteCount) {
 		switch (byteCount) {
@@ -188,7 +188,7 @@ public class NumberUtil {
 	 *            整数值
 	 * @param byteCount
 	 *            输出位数
-	 * @return
+	 * @return 字节数组
 	 */
 	public static byte[] toByteArray(long value, int byteCount) {
 		if (8 == byteCount) {

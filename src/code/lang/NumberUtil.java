@@ -59,7 +59,7 @@ public class NumberUtil {
 	public static byte[] toByteArray(short value) {
 		buffer2.clear();
 		buffer2.putShort(0, value);
-		return buffer2.array();
+		return buffer2.array().clone();
 	}
 
 	// int-----------------------------
@@ -114,7 +114,7 @@ public class NumberUtil {
 	public static byte[] toByteArray(int value) {
 		buffer4.clear();
 		buffer4.putInt(0, value);
-		return buffer4.array();
+		return buffer4.array().clone();
 	}
 
 	/**
@@ -208,7 +208,7 @@ public class NumberUtil {
 	public static byte[] toByteArray(long value) {
 		buffer8.clear();
 		buffer8.putLong(0, value);
-		return buffer8.array();
+		return buffer8.array().clone();
 	}
 
 	// float-----------------------------
@@ -267,7 +267,7 @@ public class NumberUtil {
 	public static byte[] toByteArray(float value) {
 		buffer4.clear();
 		buffer4.putFloat(value);
-		return buffer4.array();
+		return buffer4.array().clone();
 	}
 
 	// double-----------------------------
@@ -342,7 +342,7 @@ public class NumberUtil {
 	public static byte[] toByteArray(double value) {
 		buffer8.clear();
 		buffer8.putDouble(value);
-		return buffer8.array();
+		return buffer8.array().clone();
 		// 做法2：
 		// long d = Double.doubleToRawLongBits(value);
 		// byte[] byteRet = new byte[8];

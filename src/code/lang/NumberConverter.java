@@ -45,11 +45,11 @@ public class NumberConverter {
 	 *            The new byte order, either BIG_ENDIAN or LITTLE_ENDIAN
 	 */
 	protected final void resetOrder(ByteOrder bo) {
-		buffer2.reset();
+		buffer2.clear();
+		buffer4.clear();
+		buffer8.clear();
 		buffer2.order(bo);
-		buffer4.reset();
 		buffer4.order(bo);
-		buffer8.reset();
 		buffer8.order(bo);
 	}
 

@@ -4,7 +4,7 @@ import java.math.BigInteger;
 
 import org.junit.Test;
 
-public class BigIntegerUtilTest {
+public class BigNumberUtilTest {
 
 	@Test
 	public void testBigInteger() {
@@ -12,7 +12,7 @@ public class BigIntegerUtilTest {
 				"2147483647", "-2147483648", "21474836475", "-21474836475" };
 		BigInteger bValue;
 		for (int i = 0; i < intValues.length; i++) {
-			bValue = BigIntegerUtil.fromString(intValues[i]);
+			bValue = BigNumberUtil.integerFromString(intValues[i]);
 			byte[] ba = bValue.toByteArray();
 			System.out.println("\n长度＝" + bValue.toByteArray().length + ":");
 			for (byte b : ba) {

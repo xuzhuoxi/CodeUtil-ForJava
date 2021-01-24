@@ -2,5 +2,6 @@
 /dist/
 /antbin/
 /build.log
+/.idea/
 
 *.class
